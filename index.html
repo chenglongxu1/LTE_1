@@ -31,16 +31,16 @@
 <br>
 天线数
 <select name="ANT"> 
-<option value="ANT1">1</option> 
-<option value="ANT2">2</option> 
-<option value="ANT4">4</option> 
-<option value="ANT8">8</option> 
+<option value=1>1</option> 
+<option value=2>2</option> 
+<option value=4>4</option> 
+<option value=8>8</option> 
 </select> 
 
 
 <br>
 上下行
-<select name="v"> 
+<select name="ULDL"> 
 <option value="up">上行</option> 
 <option value="down">下行</option> 
 </select> 
@@ -60,15 +60,84 @@ CPRI压缩
 采样率(MHz)        	<input id="Samprate" type="text"><br>    
 IQ数据位宽(bit)       	<input id="IQbit" type="text"><br>
 小区所需CPRI位宽(bit) 	<input id="Cpribit" type="text"><br>
-小区所需CPRI速率(Mbps)	<input id="CpriRate" type="text"><br>
+小区所需净荷CPRI速率(Mbps)	<input id="CpriRateLoad" type="text"><br>
+小区所需CPRI速率(Mbps)	<input id="CpriRateTotal" type="text"><br>
 
 <script>
+function Init()
+{
+var f1=document.getElementById("form1");
+f1.BW.value="BW20"
+f1.ULDL.value="down"
+}
+
 function CaculateCpri()
 {
 	var f1=document.getElementById("form1");	
-	alert(f1.Duplex.value);
+	//alert(f1.Duplex.value);
+	/*f1.Duplex.value
+	f1.BW.value
+	f1.ANT.value
+	f1.ULDL.value
+	f1.Compress.value*/
+	//alert(f1.Compress.value);
+	if (f1.Compress.value=="NonCompr")
+	{
+		if (f1.BW.value=="BW15" || f1.BW.value=="BW20")
+		{
+			document.getElementById("AntAxc").value=8;
+		}
+		else if (f1.BW.value=="BW10")
+		{
+			document.getElementById("AntAxc").value=4;
+		}
+		else if (f1.BW.value=="BW5")
+		{
+			document.getElementById("AntAxc").value=2;
+		}	
+		else
+		{
+			document.getElementById("AntAxc").value=1;
+		}
+		
+		if(f1.ULDL.value=="down")
+		{
+		document.getElementById("IQbit").value=15;
+		}
+		if(f1.ULDL.value=="up")
+		{
+		document.getElementById("IQbit").value=12;
+		}
+	}
+	else if(f1.Compress.value=="Compr")
+	{
+		if (f1.BW.value=="BW15" || f1.BW.value=="BW20")
+		{
+			document.getElementById("AntAxc").value=6;
+		}
+		else if (f1.BW.value=="BW10")
+		{
+			document.getElementById("AntAxc").value=4;
+		}
+		else if (f1.BW.value=="BW5")
+		{
+			document.getElementById("AntAxc").value=2;
+		}	
+		else
+		{
+			document.getElementById("AntAxc").value=1;
+			alert("本带宽不支持压缩");
+		}	
+		document.getElementById("IQbit").value=10;
+	}
+	document.getElementById("Samprate").value=document.getElementById("AntAxc").value*3.84;
 	
+	document.getElementById("Cpribit").value=document.getElementById("AntAxc").value*document.getElementById("IQbit").value*2*f1.ANT.value;
+	document.getElementById("CpriRateLoad").value=document.getElementById("Samprate").value*document.getElementById("IQbit").value*2*f1.ANT.value;
+	document.getElementById("CpriRateTotal").value=document.getElementById("CpriRateLoad").value*10/8*16/15;
 }
+
+Init()
 </script>
 
 <button type="button" onclick="CaculateCpri()">点击这里计算</button>
@@ -79,7 +148,7 @@ function CaculateCpri()
 采样率=每天线占用AxC数×3.84<br>
 小区所需CPRI位宽=每天线占用AxC数×IQ数据位宽×2×天线数<br>
 小区所需CPRI速率=采样率×IQ数据位宽×2×天线数×(10/8)×(16/15)<br>
-基带板为C板时，CPRI压缩配置普通压缩，只压缩不降采样率<br>
+CPRI压缩配置普通压缩，只压缩不降采样率<br>
 2：表述IQ两路数据<br>
 10/8：8B/10B线性编码效率<br>
 16/15：CPRI帧效率，一个CPRI基本帧含16个字，15个用于传输IQ数据，1个用于传输控制字<br>
