@@ -64,7 +64,9 @@ IQÊý¾ÝÎ»¿í(bit)       	<input id="IQbit" type="text"><br>
 <script>
 function CaculateCpri()
 {
-	var f1=document.getElementById("form1");	
+var f1=document.getElementById("form1");
+
+
 	alert(f1.Duplex.value);
 	
 }
