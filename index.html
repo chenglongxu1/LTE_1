@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <body>
 
-<h1>LTE CPRI ËÙÂÊ¼ÆËã</h1>
+<h1>LTE CPRI é€ŸçŽ‡è®¡ç®—</h1>
 
 
 
 <form id="form1"> 
-Ë«¹¤·½Ê½
+åŒå·¥æ–¹å¼
 <select name="Duplex"> 
 <option value="FDD">FDD</option> 
 <option value="TDD">TDD</option> 
@@ -16,7 +16,7 @@
 
 
 <br>
-´ø¿í
+å¸¦å®½
 <select name="BW"> 
 <option value="BW1">1.4M</option> 
 <option value="BW3">3M</option>
@@ -29,7 +29,7 @@
 
 
 <br>
-ÌìÏßÊý
+å¤©çº¿æ•°
 <select name="ANT"> 
 <option value="ANT1">1</option> 
 <option value="ANT2">2</option> 
@@ -39,28 +39,28 @@
 
 
 <br>
-ÉÏÏÂÐÐ
+ä¸Šä¸‹è¡Œ
 <select name="v"> 
-<option value="up">ÉÏÐÐ</option> 
-<option value="down">ÏÂÐÐ</option> 
+<option value="up">ä¸Šè¡Œ</option> 
+<option value="down">ä¸‹è¡Œ</option> 
 </select> 
 
 
 <br>
-CPRIÑ¹Ëõ
+CPRIåŽ‹ç¼©
 <select name="Compress"> 
-<option value="NonCompr">²»Ñ¹Ëõ</option> 
-<option value="Compr">ÆÕÍ¨Ñ¹Ëõ</option> 
+<option value="NonCompr">ä¸åŽ‹ç¼©</option> 
+<option value="Compr">æ™®é€šåŽ‹ç¼©</option> 
 </select> 
 </form>
 
-<font color="blue">---ÒÔÏÂÎª¼ÆËã½á¹û£º   <br></font>
+<font color="blue">---ä»¥ä¸‹ä¸ºè®¡ç®—ç»“æžœï¼š   <br></font>
 
-Ã¿ÌìÏßÕ¼ÓÃAxCÊý 	<input id="AntAxc" type="text"><br>
-²ÉÑùÂÊ(MHz)        	<input id="Samprate" type="text"><br>    
-IQÊý¾ÝÎ»¿í(bit)       	<input id="IQbit" type="text"><br>
-Ð¡ÇøËùÐèCPRIÎ»¿í(bit) 	<input id="Cpribit" type="text"><br>
-Ð¡ÇøËùÐèCPRIËÙÂÊ(Mbps)	<input id="CpriRate" type="text"><br>
+æ¯å¤©çº¿å ç”¨AxCæ•° 	<input id="AntAxc" type="text"><br>
+é‡‡æ ·çŽ‡(MHz)        	<input id="Samprate" type="text"><br>    
+IQæ•°æ®ä½å®½(bit)       	<input id="IQbit" type="text"><br>
+å°åŒºæ‰€éœ€CPRIä½å®½(bit) 	<input id="Cpribit" type="text"><br>
+å°åŒºæ‰€éœ€CPRIé€ŸçŽ‡(Mbps)	<input id="CpriRate" type="text"><br>
 
 <script>
 function CaculateCpri()
@@ -71,28 +71,28 @@ function CaculateCpri()
 }
 </script>
 
-<button type="button" onclick="CaculateCpri()">µã»÷ÕâÀï¼ÆËã</button>
+<button type="button" onclick="CaculateCpri()">ç‚¹å‡»è¿™é‡Œè®¡ç®—</button>
 
 
 <font color="blue">
 <br>
-²ÉÑùÂÊ=Ã¿ÌìÏßÕ¼ÓÃAxCÊý¡Á3.84<br>
-Ð¡ÇøËùÐèCPRIÎ»¿í=Ã¿ÌìÏßÕ¼ÓÃAxCÊý¡ÁIQÊý¾ÝÎ»¿í¡Á2¡ÁÌìÏßÊý<br>
-Ð¡ÇøËùÐèCPRIËÙÂÊ=²ÉÑùÂÊ¡ÁIQÊý¾ÝÎ»¿í¡Á2¡ÁÌìÏßÊý¡Á(10/8)¡Á(16/15)<br>
-»ù´ø°åÎªC°åÊ±£¬CPRIÑ¹ËõÅäÖÃÆÕÍ¨Ñ¹Ëõ£¬Ö»Ñ¹Ëõ²»½µ²ÉÑùÂÊ<br>
-2£º±íÊöIQÁ½Â·Êý¾Ý<br>
-10/8£º8B/10BÏßÐÔ±àÂëÐ§ÂÊ<br>
-16/15£ºCPRIÖ¡Ð§ÂÊ£¬Ò»¸öCPRI»ù±¾Ö¡º¬16¸ö×Ö£¬15¸öÓÃÓÚ´«ÊäIQÊý¾Ý£¬1¸öÓÃÓÚ´«Êä¿ØÖÆ×Ö<br>
+é‡‡æ ·çŽ‡=æ¯å¤©çº¿å ç”¨AxCæ•°Ã—3.84<br>
+å°åŒºæ‰€éœ€CPRIä½å®½=æ¯å¤©çº¿å ç”¨AxCæ•°Ã—IQæ•°æ®ä½å®½Ã—2Ã—å¤©çº¿æ•°<br>
+å°åŒºæ‰€éœ€CPRIé€ŸçŽ‡=é‡‡æ ·çŽ‡Ã—IQæ•°æ®ä½å®½Ã—2Ã—å¤©çº¿æ•°Ã—(10/8)Ã—(16/15)<br>
+åŸºå¸¦æ¿ä¸ºCæ¿æ—¶ï¼ŒCPRIåŽ‹ç¼©é…ç½®æ™®é€šåŽ‹ç¼©ï¼ŒåªåŽ‹ç¼©ä¸é™é‡‡æ ·çŽ‡<br>
+2ï¼šè¡¨è¿°IQä¸¤è·¯æ•°æ®<br>
+10/8ï¼š8B/10Bçº¿æ€§ç¼–ç æ•ˆçŽ‡<br>
+16/15ï¼šCPRIå¸§æ•ˆçŽ‡ï¼Œä¸€ä¸ªCPRIåŸºæœ¬å¸§å«16ä¸ªå­—ï¼Œ15ä¸ªç”¨äºŽä¼ è¾“IQæ•°æ®ï¼Œ1ä¸ªç”¨äºŽä¼ è¾“æŽ§åˆ¶å­—<br>
 </font>
 
 
 <p>
-CPRI»ù±¾Ö¡
+CPRIåŸºæœ¬å¸§
 </p>
 <img src="images/cpri1.png"/>
 
 <p>
-CPRIÏßËÙÂÊ¹æ¸ñ£º
+CPRIçº¿é€ŸçŽ‡è§„æ ¼ï¼š
 </p>
 <img src="images/cpri2.png"/>
 
